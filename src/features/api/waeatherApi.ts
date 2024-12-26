@@ -13,11 +13,14 @@ export const weatherApi = createApi({
         getWeatherByCity: builder.query<WeatherInfo, string>({
             query: (city: string) => `?q=${city}&appid=${api_key}&units=metric`,
             transformResponse: (response: WeatherResponse) => {
-                    city: response.name!,
-                    country: response.sys.country!,
-                    temp: response.main.temp!,
-                    pressure: response.main.pressure!,
-                    sunset: new Date(response.sys.sunset! * 1000).toLocaleTimeString()
+              const res:WeatherInfo = {
+                    city: response.name,
+                    country: response.sys.country,
+                    temp: response.main.temp,
+                    pressure: response.main.pressure,
+                    sunset: new Date(response.sys.sunset * 1000).toLocaleTimeString()
+             };
+            return res;
             }
         })
     })
