@@ -20,7 +20,7 @@ export const weatherApi = createApi({
                     pressure: response.main.pressure,
                     sunset: new Date(response.sys.sunset * 1000).toLocaleTimeString()
              };
-            return res
+            return res;
             }
         })
     })
