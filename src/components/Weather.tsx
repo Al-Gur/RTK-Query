@@ -21,10 +21,10 @@ const Weather = () => {
         <div className={'infoWeath'}>
             {!!data &&
                 <>
-                    <p>Location: {data.sys.country}, {data.name}</p>
-                    <p>Temp: {data.main.temp}</p>
-                    <p>Pressure: {data.main.pressure}</p>
-                    <p>Sunset: {new Date(data.sys.sunset! * 1000).toLocaleTimeString()}</p>
+                    <p>Location: {data.country!}, {data.city!}</p>
+                    <p>Temp: {data.temp!}</p>
+                    <p>Pressure: {data.pressure!}</p>
+                    <p>Sunset: {data.sunset!}</p>
                 </>
             }
         </div>
